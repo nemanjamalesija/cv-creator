@@ -11,6 +11,7 @@ const FormExperience = () => {
       {experience.map((exp) => (
         <Experience key={exp.id} {...exp} />
       ))}
+      <button className="btn btn-add-experience">Add experience</button>
     </section>
   );
 };

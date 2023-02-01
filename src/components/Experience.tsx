@@ -1,14 +1,7 @@
 import React from 'react';
-type experienceProps = {
-  id: string;
-  position: string;
-  company: string;
-  city: string;
-  from: string;
-  to: string;
-};
+import { cvStructure } from '../constants/types';
 
-const Experience = (props: experienceProps) => {
+const Experience = (props: cvStructure['experience'][number]) => {
   const { id, position, company, city, from, to } = props;
 
   return (
