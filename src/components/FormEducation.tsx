@@ -3,7 +3,7 @@ import { useGlobalContext } from '../context';
 import Education from './Eduation';
 
 const FormEducation = () => {
-  const { education } = useGlobalContext();
+  const { education, addEducationHandler } = useGlobalContext();
 
   return (
     <section className="section section-education">
@@ -11,7 +11,9 @@ const FormEducation = () => {
       {education.map((edu) => (
         <Education key={edu.id} {...edu} />
       ))}
-      <button className="btn btn-add-eduation">Add education</button>
+      <button className="btn btn-add-eduation" onClick={addEducationHandler}>
+        Add education
+      </button>
     </section>
   );
 };

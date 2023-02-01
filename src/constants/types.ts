@@ -30,6 +30,7 @@ export type cvStructure = {
 };
 
 export type cvStructureAndMethods = cvStructure & {
+  addEducationHandler: () => void;
   addExperienceHandler: () => void;
 };
 

@@ -37,6 +37,7 @@ const initialState: cvStructureAndMethods = {
       to: '',
     },
   ],
+  addEducationHandler: () => void {},
   addExperienceHandler: () => void {},
 };
 
@@ -44,6 +45,10 @@ const AppContext = React.createContext(initialState);
 
 const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const addEducationHandler = () => {
+    dispatch({ type: 'ADD_EDUCATION' });
+  };
 
   const addExperienceHandler = () => {
     dispatch({ type: 'ADD_EXPERIENCE' });
@@ -53,6 +58,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
     <AppContext.Provider
       value={{
         ...state,
+        addEducationHandler,
         addExperienceHandler,
       }}
     >
