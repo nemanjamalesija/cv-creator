@@ -17,6 +17,7 @@ const initialState: cvStructureAndMethods = {
 
   experience: [
     {
+      id: crypto.randomUUID(),
       position: '',
       company: '',
       city: '',
@@ -27,6 +28,7 @@ const initialState: cvStructureAndMethods = {
 
   education: [
     {
+      id: crypto.randomUUID(),
       universityName: '',
       city: '',
       degree: '',
@@ -52,7 +54,6 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
     </AppContext.Provider>
   );
 };
-
 // make sure use
 export const useGlobalContext = () => {
   return useContext(AppContext);

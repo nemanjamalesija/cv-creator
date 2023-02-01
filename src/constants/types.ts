@@ -10,6 +10,7 @@ export type cvStructure = {
   };
 
   experience: {
+    id: string;
     position: string;
     company: string;
     city: string;
@@ -18,6 +19,7 @@ export type cvStructure = {
   }[];
 
   education: {
+    id: string;
     universityName: string;
     city: string;
     degree: string;
