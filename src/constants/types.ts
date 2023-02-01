@@ -29,4 +29,11 @@ export type cvStructure = {
   }[];
 };
 
-export type cvStructureAndMethods = cvStructure & {};
+export type cvStructureAndMethods = cvStructure & {
+  addExperienceHandler: () => void;
+};
+
+export type ACTIONS = {
+  type: 'ADD_EXPERIENCE' | 'ADD_EDUCATION';
+  payload?: string;
+};

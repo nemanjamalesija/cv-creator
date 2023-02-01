@@ -1,5 +1,5 @@
 import React, { useContext, useReducer } from 'react';
-import { cvStructureAndMethods } from './constants/types';
+import { cvStructureAndMethods, ACTIONS } from './constants/types';
 import './index.css';
 import reducer from './reducer';
 
@@ -37,6 +37,7 @@ const initialState: cvStructureAndMethods = {
       to: '',
     },
   ],
+  addExperienceHandler: () => void {},
 };
 
 const AppContext = React.createContext(initialState);
@@ -44,10 +45,15 @@ const AppContext = React.createContext(initialState);
 const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const addExperienceHandler = () => {
+    dispatch({ type: 'ADD_EXPERIENCE' });
+  };
+
   return (
     <AppContext.Provider
       value={{
         ...state,
+        addExperienceHandler,
       }}
     >
       {children}

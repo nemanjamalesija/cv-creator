@@ -3,7 +3,7 @@ import { useGlobalContext } from '../context';
 import Experience from './Experience';
 
 const FormExperience = () => {
-  const { experience } = useGlobalContext();
+  const { experience, addExperienceHandler } = useGlobalContext();
 
   return (
     <section className="section section-experience">
@@ -11,7 +11,9 @@ const FormExperience = () => {
       {experience.map((exp) => (
         <Experience key={exp.id} {...exp} />
       ))}
-      <button className="btn btn-add-experience">Add experience</button>
+      <button className="btn btn-add-experience" onClick={addExperienceHandler}>
+        Add experience
+      </button>
     </section>
   );
 };
