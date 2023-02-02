@@ -7,7 +7,7 @@ const FormEducation = () => {
 
   return (
     <section className="section section-education">
-      <h3 className="heading-section">Experience</h3>
+      <h3 className="heading-section">Education</h3>
       {education.map((edu) => (
         <Education key={edu.id} {...edu} />
       ))}

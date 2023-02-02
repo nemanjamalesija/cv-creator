@@ -39,6 +39,10 @@ const initialState: cvStructureAndMethods = {
   ],
   addEducationHandler: () => void {},
   addExperienceHandler: () => void {},
+  storeEducationInputHandler: (
+    e: React.ChangeEvent<HTMLInputElement>,
+    id: string
+  ) => void {},
 };
 
 const AppContext = React.createContext(initialState);
@@ -54,12 +58,25 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
     dispatch({ type: 'ADD_EXPERIENCE' });
   };
 
+  const storeEducationInputHandler = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    id: string
+  ) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    dispatch({ type: 'STORE_EDUCATION_INFO', payload: { name, value, id } });
+  };
+
+  console.log(state.education);
+
   return (
     <AppContext.Provider
       value={{
         ...state,
         addEducationHandler,
         addExperienceHandler,
+        storeEducationInputHandler,
       }}
     >
       {children}
