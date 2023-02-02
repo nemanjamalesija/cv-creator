@@ -118,3 +118,27 @@ textarea {
 .btn-add-delete:hover {
   background-color: #222;
 }
+
+.btn-load-example,
+.btn-print {
+  background-color: #13b443;
+}
+
+.btn-load-example:hover,
+.btn-print:hover {
+  background-color: #11a22e;
+}
+
+.btn-reset,
+.btn-back {
+  background-color: #f0070c;
+}
+
+.btn-reset:hover,
+.bn-back:hover {
+  background-color: #d8060b;
+}
+
+.submit-section {
+  margin-top: 3.2rem;
+}
