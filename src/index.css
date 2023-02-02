@@ -127,6 +127,7 @@ textarea {
 .btn-load-example,
 .btn-print {
   background-color: #13b443;
+  color: #fff;
 }
 
 .btn-load-example:hover,
@@ -137,6 +138,7 @@ textarea {
 .btn-reset,
 .btn-back {
   background-color: #f0070c;
+  color: #fff;
 }
 
 .btn-reset:hover,

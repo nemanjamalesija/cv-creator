@@ -1,62 +1,19 @@
 import React, { useContext, useReducer, useEffect } from 'react';
-import { cvStructureAndMethods, ACTIONS } from './constants/types';
+import { ACTIONS } from './constants/types';
+import { initialState } from './constants/initialState';
 import './index.css';
 import reducer from './reducer';
 
 //////////////context
-
-const initialState: cvStructureAndMethods = {
-  showModal: false,
-
-  personalInfo: {
-    firstName: '',
-    lastName: '',
-    photo: '',
-    title: '',
-    adress: '',
-    phoneNumber: '',
-    email: '',
-    description: '',
-  },
-
-  experience: [
-    {
-      id: crypto.randomUUID(),
-      position: '',
-      company: '',
-      city: '',
-      from: '',
-      to: '',
-    },
-  ],
-
-  education: [
-    {
-      id: crypto.randomUUID(),
-      universityName: '',
-      city: '',
-      degree: '',
-      subject: '',
-      from: '',
-      to: '',
-    },
-  ],
-  addEducationHandler: () => void {},
-  addExperienceHandler: () => void {},
-  storeInputsHandler: (
-    e: React.ChangeEvent<HTMLInputElement>,
-    id: string,
-    dispatchActionType: string
-  ) => void {},
-  deleteUserInfoHandler: (id: string, dispatchActionType: string) => void {},
-  setPhotoHandler: (e: any) => void {},
-  submitHandler: (e: any) => void {},
-  closeModalHandler: () => void {},
-};
 const AppContext = React.createContext(initialState);
 
 const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const setPhotoHandler = (e: any) => {
+    const photo = URL.createObjectURL(e.target.files[0]);
+    dispatch({ type: 'SET_PHOTO', payload: photo });
+  };
 
   const addEducationHandler = () => {
     dispatch({ type: 'ADD_EDUCATION' });
@@ -66,9 +23,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
     dispatch({ type: 'ADD_EXPERIENCE' });
   };
 
-  /*
-
-  const storeEducationInputHandler = (
+  /* const storeEducationInputHandler = (
     e: React.ChangeEvent<HTMLInputElement>,
     id: string
   ) => {
@@ -90,23 +45,6 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   };
 */
 
-  // close cv preview on escape
-  useEffect(() => {
-    function handleEscapeKey(event: any) {
-      if (event.key === 'Escape') {
-        dispatch({ type: 'CLOSE_MODAL' });
-      }
-    }
-
-    document.addEventListener('keydown', handleEscapeKey);
-    return () => document.removeEventListener('keydown', handleEscapeKey);
-  });
-
-  const setPhotoHandler = (e: any) => {
-    const photo = URL.createObjectURL(e.target.files[0]);
-    dispatch({ type: 'SET_PHOTO', payload: photo });
-  };
-
   /* Refactor to a single handler function */
   const storeInputsHandler = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -127,12 +65,29 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const submitHandler = (e: any) => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
     dispatch({ type: 'OPEN_MODAL' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const closeModalHandler = () => {
     dispatch({ type: 'CLOSE_MODAL' });
+  };
+
+  // close cv preview on escape
+  useEffect(() => {
+    function handleEscapeKey(event: any) {
+      if (event.key === 'Escape') {
+        dispatch({ type: 'CLOSE_MODAL' });
+      }
+    }
+
+    document.addEventListener('keydown', handleEscapeKey);
+    return () => document.removeEventListener('keydown', handleEscapeKey);
+  });
+
+  const resetStateHandler = () => {
+    dispatch({ type: 'RESET_STATE' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -146,6 +101,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
         setPhotoHandler,
         submitHandler,
         closeModalHandler,
+        resetStateHandler,
       }}
     >
       {children}

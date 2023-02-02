@@ -1,3 +1,4 @@
+import { initialState } from './constants/initialState';
 import { cvStructure } from './constants/types';
 import { ACTIONS } from './constants/types';
 
@@ -78,17 +79,23 @@ const reducer = (state: cvStructure, action: ACTIONS) => {
       );
 
       return { ...state, education: newEducationArray };
+
     case 'DELETE_EXPERIENCE_INFO':
       const newExperienceArray = state.experience.filter(
         (exp) => exp.id !== payload
       );
 
       return { ...state, experience: newExperienceArray };
+
     case 'OPEN_MODAL': {
       return { ...state, showModal: true };
     }
+
     case 'CLOSE_MODAL':
       return { ...state, showModal: false };
+
+    case 'RESET_STATE':
+      return initialState;
 
     default:
       return { ...state };

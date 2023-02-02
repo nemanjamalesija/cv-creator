@@ -2,7 +2,7 @@ import React from 'react';
 import { useGlobalContext } from '../context';
 
 const SubmitButtons = () => {
-  const { submitHandler } = useGlobalContext();
+  const { submitHandler, resetStateHandler } = useGlobalContext();
   return (
     <section className="submit-section">
       <div className="submit-buttons">
@@ -13,7 +13,9 @@ const SubmitButtons = () => {
         >
           Preview
         </button>
-        <button className="btn btn-reset">Reset</button>
+        <button className="btn btn-reset" onClick={resetStateHandler}>
+          Reset
+        </button>
       </div>
     </section>
   );

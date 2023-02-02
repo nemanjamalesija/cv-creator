@@ -43,6 +43,7 @@ export type cvStructureAndMethods = cvStructure & {
   setPhotoHandler(e: any): void;
   submitHandler(e: any): void;
   closeModalHandler(): void;
+  resetStateHandler(): void;
 };
 
 type payloadStoreInputs = { name: string; value: string; id: string };
@@ -58,7 +59,8 @@ export type ACTIONS = {
     | 'DELETE_EXPERIENCE_INFO'
     | 'SET_PHOTO'
     | 'OPEN_MODAL'
-    | 'CLOSE_MODAL';
+    | 'CLOSE_MODAL'
+    | 'RESET_STATE';
 
   payload?: string | payloadStoreInputs;
 };
