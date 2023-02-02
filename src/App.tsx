@@ -11,8 +11,8 @@ function App() {
       <Headline />
       <main className="container-center">
         <PersonalInfo />
-        <FormExperience />
         <FormEducation />
+        <FormExperience />
       </main>
     </div>
   );

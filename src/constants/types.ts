@@ -37,6 +37,7 @@ export type cvStructureAndMethods = cvStructure & {
     id: string,
     dispatchActionType: string
   ) => void;
+  deleteUserInfoHandler: (id: string, dispatchActionType: string) => void;
 };
 
 type payloadStoreInputs = { name: string; value: string; id: string };
@@ -47,7 +48,9 @@ export type ACTIONS = {
     | 'ADD_EDUCATION'
     | 'STORE_PERSONAL_INFO'
     | 'STORE_EDUCATION_INFO'
-    | 'STORE_EXPERIENCE_INFO';
+    | 'STORE_EXPERIENCE_INFO'
+    | 'DELETE_EDUCATION_INFO'
+    | 'DELETE_EXPERIENCE_INFO';
 
   payload?: string | payloadStoreInputs;
 };

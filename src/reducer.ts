@@ -63,6 +63,19 @@ const reducer = (state: cvStructure, action: ACTIONS) => {
         return { ...state, experience: newExperienceArray };
       } else return { ...state };
 
+    case 'DELETE_EDUCATION_INFO':
+      const newEducationArray = state.education.filter(
+        (edu) => edu.id !== payload
+      );
+
+      return { ...state, education: newEducationArray };
+    case 'DELETE_EXPERIENCE_INFO':
+      const newExperienceArray = state.experience.filter(
+        (exp) => exp.id !== payload
+      );
+
+      return { ...state, experience: newExperienceArray };
+
     default:
       return { ...state };
   }

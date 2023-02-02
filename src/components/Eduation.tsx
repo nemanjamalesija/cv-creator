@@ -4,7 +4,7 @@ import { useGlobalContext } from '../context';
 
 const Eduation = (props: cvStructure['education'][number]) => {
   const { id, universityName, city, degree, subject, from, to } = props;
-  const { storeInputsHandler } = useGlobalContext();
+  const { storeInputsHandler, deleteUserInfoHandler } = useGlobalContext();
 
   return (
     <div>
@@ -52,7 +52,12 @@ const Eduation = (props: cvStructure['education'][number]) => {
           onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
         />
       </div>
-      <button className="btn btn-add-delete">Delete</button>
+      <button
+        className="btn btn-add-delete"
+        onClick={() => deleteUserInfoHandler(id, 'DELETE_EDUCATION_INFO')}
+      >
+        Delete
+      </button>
     </div>
   );
 };

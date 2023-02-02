@@ -10,7 +10,7 @@ html {
 
 body {
   font-family: 'Nunito', sans-serif;
-  background-color: #adb5bd;
+  background-color: #d2d4d7;
 }
 
 /* headline section */
@@ -27,7 +27,7 @@ body {
   text-align: center;
   font-size: 4.2rem;
   text-transform: uppercase;
-  color: #fff;
+  color: #d2d4d7;
   line-height: 1.2;
   font-weight: 600;
 }
@@ -73,7 +73,7 @@ body {
 
 .form-control input {
   margin-top: 0.5rem;
-  background-color: hsl(0, 0%, 94%);
+  background-color: #fbfbfc;
   border: 1px solid hsl(0, 0%, 80%);
   color: inherit;
   font-family: inherit;

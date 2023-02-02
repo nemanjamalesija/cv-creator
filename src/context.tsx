@@ -44,6 +44,7 @@ const initialState: cvStructureAndMethods = {
     id: string,
     dispatchActionType: string
   ) => void {},
+  deleteUserInfoHandler: (id: string, dispatchActionType: string) => void {},
 };
 const AppContext = React.createContext(initialState);
 
@@ -97,6 +98,10 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
     });
   };
 
+  const deleteUserInfoHandler = (id: string, dispatchActionType: string) => {
+    dispatch({ type: dispatchActionType as ACTIONS['type'], payload: id });
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -104,6 +109,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
         addEducationHandler,
         addExperienceHandler,
         storeInputsHandler,
+        deleteUserInfoHandler,
       }}
     >
       {children}
