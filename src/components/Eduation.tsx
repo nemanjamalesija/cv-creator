@@ -14,7 +14,7 @@ const Eduation = (props: cvStructure['education'][number]) => {
         placeholder="University name"
         value={universityName}
         onChange={(e) =>
-          storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO', dispatch)
+          storeInputsHandler(e, id, dispatch, 'STORE_EXPERIENCE_INFO')
         }
       />
       <input
@@ -23,7 +23,7 @@ const Eduation = (props: cvStructure['education'][number]) => {
         placeholder="City"
         value={city}
         onChange={(e) =>
-          storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO', dispatch)
+          storeInputsHandler(e, id, dispatch, 'STORE_EXPERIENCE_INFO')
         }
       />
       <input
@@ -32,7 +32,7 @@ const Eduation = (props: cvStructure['education'][number]) => {
         placeholder="Degree"
         value={degree}
         onChange={(e) =>
-          storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO', dispatch)
+          storeInputsHandler(e, id, dispatch, 'STORE_EXPERIENCE_INFO')
         }
       />
       <input
@@ -41,7 +41,7 @@ const Eduation = (props: cvStructure['education'][number]) => {
         placeholder="Subject"
         value={subject}
         onChange={(e) =>
-          storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO', dispatch)
+          storeInputsHandler(e, id, dispatch, 'STORE_EXPERIENCE_INFO')
         }
       />
       <input
@@ -50,7 +50,7 @@ const Eduation = (props: cvStructure['education'][number]) => {
         placeholder="From (dd/mm/yy)"
         value={from}
         onChange={(e) =>
-          storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO', dispatch)
+          storeInputsHandler(e, id, dispatch, 'STORE_EXPERIENCE_INFO')
         }
       />
       <input
@@ -59,7 +59,7 @@ const Eduation = (props: cvStructure['education'][number]) => {
         placeholder="To (dd/mm/yy)"
         value={to}
         onChange={(e) =>
-          storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO', dispatch)
+          storeInputsHandler(e, id, dispatch, 'STORE_EXPERIENCE_INFO')
         }
       />
     </div>

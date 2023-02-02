@@ -1,5 +1,5 @@
 import React from 'react';
-import { cvStructure, ACTIONS } from '../constants/types';
+import { cvStructure } from '../constants/types';
 import { useGlobalContext } from '../context';
 
 const Experience = (props: cvStructure['experience'][number]) => {
@@ -14,7 +14,7 @@ const Experience = (props: cvStructure['experience'][number]) => {
         value={position}
         placeholder="Position"
         onChange={(e) =>
-          storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO', dispatch)
+          storeInputsHandler(e, id, dispatch, 'STORE_EXPERIENCE_INFO')
         }
       />
       <input
@@ -23,7 +23,7 @@ const Experience = (props: cvStructure['experience'][number]) => {
         value={company}
         placeholder="Company"
         onChange={(e) =>
-          storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO', dispatch)
+          storeInputsHandler(e, id, dispatch, 'STORE_EXPERIENCE_INFO')
         }
       />
       <input
@@ -32,7 +32,7 @@ const Experience = (props: cvStructure['experience'][number]) => {
         value={city}
         placeholder="City"
         onChange={(e) =>
-          storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO', dispatch)
+          storeInputsHandler(e, id, dispatch, 'STORE_EXPERIENCE_INFO')
         }
       />
       <input
@@ -41,7 +41,7 @@ const Experience = (props: cvStructure['experience'][number]) => {
         value={from}
         placeholder="From (dd/mm/yy)"
         onChange={(e) =>
-          storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO', dispatch)
+          storeInputsHandler(e, id, dispatch, 'STORE_EXPERIENCE_INFO')
         }
       />
       <input
@@ -50,7 +50,7 @@ const Experience = (props: cvStructure['experience'][number]) => {
         value={to}
         placeholder="To (dd/mm/yy)"
         onChange={(e) =>
-          storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO', dispatch)
+          storeInputsHandler(e, id, dispatch, 'STORE_EXPERIENCE_INFO')
         }
       />
     </div>

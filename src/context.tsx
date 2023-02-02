@@ -42,8 +42,8 @@ const initialState: cvStructureAndMethods = {
   storeInputsHandler: (
     e: React.ChangeEvent<HTMLInputElement>,
     id: string,
-    instructionString: string,
-    instructions: React.Dispatch<ACTIONS>
+    instructions: React.Dispatch<ACTIONS>,
+    dispatchActionType: string
   ) => void {},
   dispatch: () => void {},
 };
@@ -88,14 +88,14 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const storeInputsHandler = (
     e: React.ChangeEvent<HTMLInputElement>,
     id: string,
-    instructionString: string,
-    instructions: React.Dispatch<ACTIONS>
+    instructions: React.Dispatch<ACTIONS>,
+    dispatchActionType: string
   ) => {
     const name = e.target.name;
     const value = e.target.value;
 
     instructions({
-      type: instructionString as ACTIONS['type'],
+      type: dispatchActionType as ACTIONS['type'],
       payload: { name, value, id },
     });
   };
