@@ -24,7 +24,6 @@
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  padding: 2rem;
 }
 
 .photo-image {
@@ -34,6 +33,7 @@
 
 .photo-info {
   width: 100%;
+  padding: 0.6rem 1.2rem;
 }
 
 .photo-info-description {
@@ -74,11 +74,6 @@
   min-height: 105rem;
 }
 
-.textual-data {
-  display: flex;
-  flex-direction: column;
-}
-
 .info-component,
 .description {
   min-height: 10rem;
@@ -86,6 +81,7 @@
 
 .description {
   word-wrap: break-word;
+  margin-top: 2.4rem;
 }
 
 .description-paragraph {
