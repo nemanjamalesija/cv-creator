@@ -42,10 +42,8 @@ const initialState: cvStructureAndMethods = {
   storeInputsHandler: (
     e: React.ChangeEvent<HTMLInputElement>,
     id: string,
-    instructions: React.Dispatch<ACTIONS>,
     dispatchActionType: string
   ) => void {},
-  dispatch: () => void {},
 };
 const AppContext = React.createContext(initialState);
 
@@ -59,8 +57,6 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const addExperienceHandler = () => {
     dispatch({ type: 'ADD_EXPERIENCE' });
   };
-
-  console.log(state.personalInfo);
 
   /*
 
@@ -86,17 +82,16 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   };
 */
 
-  /* Refactor to higher order function */
+  /* Refactor to a single handler function */
   const storeInputsHandler = (
     e: React.ChangeEvent<HTMLInputElement>,
     id: string,
-    instructions: React.Dispatch<ACTIONS>,
     dispatchActionType: string
   ) => {
     const name = e.target.name;
     const value = e.target.value;
 
-    instructions({
+    dispatch({
       type: dispatchActionType as ACTIONS['type'],
       payload: { name, value, id },
     });
@@ -109,7 +104,6 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
         addEducationHandler,
         addExperienceHandler,
         storeInputsHandler,
-        dispatch,
       }}
     >
       {children}

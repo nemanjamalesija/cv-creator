@@ -35,10 +35,8 @@ export type cvStructureAndMethods = cvStructure & {
   storeInputsHandler: (
     e: React.ChangeEvent<HTMLInputElement>,
     id: string,
-    instructions: React.Dispatch<ACTIONS>,
     dispatchActionType: string
   ) => void;
-  dispatch: React.Dispatch<ACTIONS>;
 };
 
 type payloadStoreInputs = { name: string; value: string; id: string };
