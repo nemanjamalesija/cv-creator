@@ -32,15 +32,23 @@ export type cvStructure = {
 export type cvStructureAndMethods = cvStructure & {
   addEducationHandler: () => void;
   addExperienceHandler: () => void;
-  storeEducationInputHandler: (
+  storeInputsHandler: (
     e: React.ChangeEvent<HTMLInputElement>,
-    id: string
+    id: string,
+    instructionString: string,
+    instructions: React.Dispatch<ACTIONS>
   ) => void;
+  dispatch: React.Dispatch<ACTIONS>;
 };
 
 type payloadStoreInputs = { name: string; value: string; id: string };
 
 export type ACTIONS = {
-  type: 'ADD_EXPERIENCE' | 'ADD_EDUCATION' | 'STORE_EDUCATION_INFO';
+  type:
+    | 'ADD_EXPERIENCE'
+    | 'ADD_EDUCATION'
+    | 'STORE_EDUCATION_INFO'
+    | 'STORE_EXPERIENCE_INFO';
+
   payload?: string | payloadStoreInputs;
 };
