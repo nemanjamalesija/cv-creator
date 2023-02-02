@@ -28,6 +28,17 @@ const reducer = (state: cvStructure, action: ACTIONS) => {
       };
 
       return { ...state, experience: [...state.experience, newExperience] };
+
+    case 'STORE_PERSONAL_INFO':
+      if (payload && typeof payload === 'object') {
+        const { name, value } = payload;
+
+        return {
+          ...state,
+          personalInfo: { ...state.personalInfo, [name]: value },
+        };
+      } else return { ...state };
+
     case 'STORE_EDUCATION_INFO':
       if (payload && typeof payload === 'object') {
         const { name, value, id } = payload;
@@ -39,6 +50,7 @@ const reducer = (state: cvStructure, action: ACTIONS) => {
 
         return { ...state, education: newEducationArray };
       } else return { ...state };
+
     case 'STORE_EXPERIENCE_INFO':
       if (payload && typeof payload === 'object') {
         const { name, value, id } = payload;

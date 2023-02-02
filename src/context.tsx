@@ -60,6 +60,8 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
     dispatch({ type: 'ADD_EXPERIENCE' });
   };
 
+  console.log(state.personalInfo);
+
   /*
 
   const storeEducationInputHandler = (

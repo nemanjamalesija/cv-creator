@@ -47,6 +47,7 @@ export type ACTIONS = {
   type:
     | 'ADD_EXPERIENCE'
     | 'ADD_EDUCATION'
+    | 'STORE_PERSONAL_INFO'
     | 'STORE_EDUCATION_INFO'
     | 'STORE_EXPERIENCE_INFO';
 
