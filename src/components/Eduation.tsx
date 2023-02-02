@@ -7,49 +7,52 @@ const Eduation = (props: cvStructure['education'][number]) => {
   const { storeInputsHandler } = useGlobalContext();
 
   return (
-    <div className="form-control">
-      <input
-        type="text"
-        name="universityName"
-        placeholder="University name"
-        value={universityName}
-        onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
-      />
-      <input
-        type="text"
-        name="city"
-        placeholder="City"
-        value={city}
-        onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
-      />
-      <input
-        type="text"
-        name="degree"
-        placeholder="Degree"
-        value={degree}
-        onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
-      />
-      <input
-        type="text"
-        name="subject"
-        placeholder="Subject"
-        value={subject}
-        onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
-      />
-      <input
-        type="text"
-        name="from"
-        placeholder="From (dd/mm/yy)"
-        value={from}
-        onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
-      />
-      <input
-        type="text"
-        name="to"
-        placeholder="To (dd/mm/yy)"
-        value={to}
-        onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
-      />
+    <div>
+      <div className="form-control">
+        <input
+          type="text"
+          name="universityName"
+          placeholder="University name"
+          value={universityName}
+          onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
+        />
+        <input
+          type="text"
+          name="city"
+          placeholder="City"
+          value={city}
+          onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
+        />
+        <input
+          type="text"
+          name="degree"
+          placeholder="Degree"
+          value={degree}
+          onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
+        />
+        <input
+          type="text"
+          name="subject"
+          placeholder="Subject"
+          value={subject}
+          onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
+        />
+        <input
+          type="text"
+          name="from"
+          placeholder="From (dd/mm/yy)"
+          value={from}
+          onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
+        />
+        <input
+          type="text"
+          name="to"
+          placeholder="To (dd/mm/yy)"
+          value={to}
+          onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
+        />
+      </div>
+      <button className="btn btn-add-delete">Delete</button>
     </div>
   );
 };
