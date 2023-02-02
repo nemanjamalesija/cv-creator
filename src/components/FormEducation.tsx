@@ -11,7 +11,7 @@ const FormEducation = () => {
       {education.map((edu) => (
         <Education key={edu.id} {...edu} />
       ))}
-      <button className="btn btn-add-eduation" onClick={addEducationHandler}>
+      <button className="btn btn-add-delete" onClick={addEducationHandler}>
         Add education
       </button>
     </section>

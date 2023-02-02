@@ -11,7 +11,7 @@ const FormExperience = () => {
       {experience.map((exp) => (
         <Experience key={exp.id} {...exp} />
       ))}
-      <button className="btn btn-add-experience" onClick={addExperienceHandler}>
+      <button className="btn btn-add-delete" onClick={addExperienceHandler}>
         Add experience
       </button>
     </section>
