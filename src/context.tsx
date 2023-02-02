@@ -1,13 +1,17 @@
-import React, { useContext, useReducer } from 'react';
+import React, { useContext, useReducer, useEffect } from 'react';
 import { cvStructureAndMethods, ACTIONS } from './constants/types';
 import './index.css';
 import reducer from './reducer';
 
 //////////////context
+
 const initialState: cvStructureAndMethods = {
+  showModal: false,
+
   personalInfo: {
     firstName: '',
     lastName: '',
+    photo: '',
     title: '',
     adress: '',
     phoneNumber: '',
@@ -45,6 +49,9 @@ const initialState: cvStructureAndMethods = {
     dispatchActionType: string
   ) => void {},
   deleteUserInfoHandler: (id: string, dispatchActionType: string) => void {},
+  setPhotoHandler: (e: any) => void {},
+  submitHandler: (e: any) => void {},
+  closeModalHandler: () => void {},
 };
 const AppContext = React.createContext(initialState);
 
@@ -83,6 +90,23 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   };
 */
 
+  // close cv preview on escape
+  useEffect(() => {
+    function handleEscapeKey(event: any) {
+      if (event.key === 'Escape') {
+        dispatch({ type: 'CLOSE_MODAL' });
+      }
+    }
+
+    document.addEventListener('keydown', handleEscapeKey);
+    return () => document.removeEventListener('keydown', handleEscapeKey);
+  });
+
+  const setPhotoHandler = (e: any) => {
+    const photo = URL.createObjectURL(e.target.files[0]);
+    dispatch({ type: 'SET_PHOTO', payload: photo });
+  };
+
   /* Refactor to a single handler function */
   const storeInputsHandler = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -102,6 +126,15 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
     dispatch({ type: dispatchActionType as ACTIONS['type'], payload: id });
   };
 
+  const submitHandler = (e: any) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    dispatch({ type: 'OPEN_MODAL' });
+  };
+
+  const closeModalHandler = () => {
+    dispatch({ type: 'CLOSE_MODAL' });
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -110,6 +143,9 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
         addExperienceHandler,
         storeInputsHandler,
         deleteUserInfoHandler,
+        setPhotoHandler,
+        submitHandler,
+        closeModalHandler,
       }}
     >
       {children}

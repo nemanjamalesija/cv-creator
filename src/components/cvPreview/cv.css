@@ -1,0 +1,138 @@
+.modal-container {
+  position: absolute;
+  top: 1%;
+  right: 50%;
+  transform: translate(50%);
+  bottom: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 200;
+  width: 100rem;
+}
+
+.modal-center {
+  width: 90rem;
+  margin: 0 auto;
+  background-color: #f8f9f9;
+  min-height: 120rem;
+
+  position: relative;
+}
+
+.photo-area {
+  background-color: #e9ecef;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 2rem;
+}
+
+.photo-image {
+  width: 100%;
+  display: block;
+}
+
+.photo-info {
+  width: 100%;
+}
+
+.photo-info-description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cv-header {
+  grid-column: span 2;
+  background-color: #44a857;
+  margin-right: 5rem;
+  width: 100%;
+  min-height: 15rem;
+  padding: 2rem;
+  position: relative;
+}
+
+.cv-header h1 {
+  font-size: 3.2rem;
+  color: #f5f5f5;
+}
+
+.cv-header p {
+  color: #f5f5f5;
+}
+
+.personal-info-title {
+  font-size: 1.6rem;
+}
+
+.cv-main {
+  display: grid;
+  grid-template-columns: 56rem 26rem;
+  gap: 6rem;
+  padding: 0 2rem;
+  width: 100%;
+  min-height: 105rem;
+}
+
+.textual-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-component,
+.description {
+  min-height: 10rem;
+}
+
+.description {
+  word-wrap: break-word;
+}
+
+.description-paragraph {
+  line-height: 1.5;
+  font-style: italic;
+  color: #666;
+  font-size: 1.8rem;
+}
+
+.modal-heading {
+  color: #44a857;
+  border-bottom: 1px solid #c2c2c2;
+  font-size: 2rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.heading-div {
+  text-decoration: underline;
+}
+.info-example {
+  display: flex;
+  gap: 2rem;
+  overflow-wrap: break-word;
+}
+.info-top {
+  color: #444;
+  font-weight: 600;
+  min-width: 25rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.8rem;
+}
+
+.info-bot {
+  color: #666;
+  min-width: 25rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.6rem;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@media print {
+  @page {
+    size: 'A4' landscape;
+  }
+}

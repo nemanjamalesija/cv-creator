@@ -39,6 +39,15 @@ const reducer = (state: cvStructure, action: ACTIONS) => {
         };
       } else return { ...state };
 
+    case 'SET_PHOTO':
+      if (typeof payload === 'string') {
+        console.log(payload);
+        return {
+          ...state,
+          personalInfo: { ...state.personalInfo, photo: payload },
+        };
+      } else return { ...state };
+
     case 'STORE_EDUCATION_INFO':
       if (payload && typeof payload === 'object') {
         const { name, value, id } = payload;
@@ -75,6 +84,11 @@ const reducer = (state: cvStructure, action: ACTIONS) => {
       );
 
       return { ...state, experience: newExperienceArray };
+    case 'OPEN_MODAL': {
+      return { ...state, showModal: true };
+    }
+    case 'CLOSE_MODAL':
+      return { ...state, showModal: false };
 
     default:
       return { ...state };

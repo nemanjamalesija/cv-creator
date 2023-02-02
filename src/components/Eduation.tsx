@@ -14,42 +14,42 @@ const Eduation = (props: cvStructure['education'][number]) => {
           name="universityName"
           placeholder="University name"
           value={universityName}
-          onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
+          onChange={(e) => storeInputsHandler(e, id, 'STORE_EDUCATION_INFO')}
         />
         <input
           type="text"
           name="city"
           placeholder="City"
           value={city}
-          onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
+          onChange={(e) => storeInputsHandler(e, id, 'STORE_EDUCATION_INFO')}
         />
         <input
           type="text"
           name="degree"
           placeholder="Degree"
           value={degree}
-          onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
+          onChange={(e) => storeInputsHandler(e, id, 'STORE_EDUCATION_INFO')}
         />
         <input
           type="text"
           name="subject"
           placeholder="Subject"
           value={subject}
-          onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
+          onChange={(e) => storeInputsHandler(e, id, 'STORE_EDUCATION_INFO')}
         />
         <input
           type="text"
           name="from"
           placeholder="From (dd/mm/yy)"
           value={from}
-          onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
+          onChange={(e) => storeInputsHandler(e, id, 'STORE_EDUCATION_INFO')}
         />
         <input
           type="text"
           name="to"
           placeholder="To (dd/mm/yy)"
           value={to}
-          onChange={(e) => storeInputsHandler(e, id, 'STORE_EXPERIENCE_INFO')}
+          onChange={(e) => storeInputsHandler(e, id, 'STORE_EDUCATION_INFO')}
         />
       </div>
       <button

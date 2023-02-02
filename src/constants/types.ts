@@ -1,7 +1,9 @@
 export type cvStructure = {
+  showModal: boolean;
   personalInfo: {
     firstName: string;
     lastName: string;
+    photo: string;
     title: string;
     adress: string;
     phoneNumber: string;
@@ -38,6 +40,9 @@ export type cvStructureAndMethods = cvStructure & {
     dispatchActionType: string
   ) => void;
   deleteUserInfoHandler: (id: string, dispatchActionType: string) => void;
+  setPhotoHandler(e: any): void;
+  submitHandler(e: any): void;
+  closeModalHandler(): void;
 };
 
 type payloadStoreInputs = { name: string; value: string; id: string };
@@ -50,7 +55,10 @@ export type ACTIONS = {
     | 'STORE_EDUCATION_INFO'
     | 'STORE_EXPERIENCE_INFO'
     | 'DELETE_EDUCATION_INFO'
-    | 'DELETE_EXPERIENCE_INFO';
+    | 'DELETE_EXPERIENCE_INFO'
+    | 'SET_PHOTO'
+    | 'OPEN_MODAL'
+    | 'CLOSE_MODAL';
 
   payload?: string | payloadStoreInputs;
 };

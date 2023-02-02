@@ -13,6 +13,7 @@ const PersonalInfo = () => {
       description,
     },
     storeInputsHandler,
+    setPhotoHandler,
   } = useGlobalContext();
 
   return (
@@ -40,6 +41,10 @@ const PersonalInfo = () => {
           placeholder="Title"
           onChange={(e) => storeInputsHandler(e, '', 'STORE_PERSONAL_INFO')}
         />
+        <label className="photo">
+          <input type="file" name="photo" onChange={setPhotoHandler} />
+          Photo
+        </label>
         <input
           type="text"
           name="adress"
