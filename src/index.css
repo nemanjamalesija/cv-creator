@@ -50,7 +50,7 @@ body {
 /* forms */
 .heading-section {
   font-size: 2.2rem;
-  color: #444;
+  color: #333;
   margin-top: 4.2rem;
 }
 
@@ -80,7 +80,7 @@ body {
   margin-top: 0.5rem;
   background-color: #fbfbfc;
   border: 1px solid hsl(0, 0%, 80%);
-  color: inherit;
+  color: #333;
   font-family: inherit;
   transition: box-shadow 0.3s ease;
 }
