@@ -1,12 +1,16 @@
 import React, { useRef } from 'react';
-import FormEducation from './components/FormEducation';
-import FormExperience from './components/FormExperience';
-import PersonalInfo from './components/PersonalInfo';
-import Headline from './components/Headline';
+import {
+  Headline,
+  PersonalInfo,
+  FormEducation,
+  FormExperience,
+  SubmitButtons,
+  Overlay,
+} from './components';
+
 import PrintControl from './components/cvPreview/PrintControl';
-import SubmitButtons from './components/SubmitButtons';
+
 import CvPreview from './components/cvPreview/CvPreview';
-import Overlay from './components/Overlay';
 
 import { useGlobalContext } from './context';
 
