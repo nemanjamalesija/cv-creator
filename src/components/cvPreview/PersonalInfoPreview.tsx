@@ -4,20 +4,12 @@ const userPhotoUnknown = require('../../constants/img-undefined.jpg') as string;
 
 const PersonalInfoPreview = () => {
   const { personalInfo } = useGlobalContext();
-  const {
-    firstName,
-    lastName,
-    title,
-    photo,
-    adress,
-    phoneNumber,
-    email,
-    description,
-  } = personalInfo;
+  const { photo, adress, phoneNumber, email } = personalInfo;
   return (
     <div className="photo-area">
       <img
         src={`${photo ? photo : userPhotoUnknown}`}
+        alt="User"
         className="photo-image"
       />
       <div className="photo-info">
