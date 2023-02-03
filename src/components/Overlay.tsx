@@ -2,8 +2,13 @@ import React from 'react';
 import { useGlobalContext } from '../context';
 
 const Overlay = () => {
-  const { showModal } = useGlobalContext();
-  return <div className={`${showModal ? 'overlay' : 'overlay hidden'}`} />;
+  const { showModal, closeModalHandler } = useGlobalContext();
+  return (
+    <div
+      className={`${showModal ? 'overlay' : 'overlay hidden'}`}
+      onClick={closeModalHandler}
+    />
+  );
 };
 
 export default Overlay;
