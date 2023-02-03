@@ -6,6 +6,8 @@ import Headline from './components/Headline';
 import PrintControl from './components/cvPreview/PrintControl';
 import SubmitButtons from './components/SubmitButtons';
 import CvPreview from './components/cvPreview/CvPreview';
+import Overlay from './components/Overlay';
+
 import { useGlobalContext } from './context';
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
       </main>
       <PrintControl cvPrintRef={cvPrintRef} />
       <CvPreview cvPrintRef={cvPrintRef} />
+      <Overlay />
     </div>
   );
 }

@@ -146,6 +146,10 @@ textarea {
   background-color: #d8060b;
 }
 
+.btn-print {
+  z-index: 30;
+}
+
 .submit-section {
   margin-top: 3.2rem;
 }
@@ -155,4 +159,15 @@ textarea {
   opacity: 0;
 }
 
-/* /* <img src={`${photo ? photo : Image}`} className="photo-image" /> */
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 20;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

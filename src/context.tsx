@@ -65,8 +65,8 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const submitHandler = (e: any) => {
-    dispatch({ type: 'OPEN_MODAL' });
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    dispatch({ type: 'OPEN_MODAL' });
   };
 
   const closeModalHandler = () => {
