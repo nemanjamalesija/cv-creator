@@ -1,4 +1,4 @@
-import { cvStructureAndMethods } from './types';
+import { cvStructureAndMethods } from '../types/types';
 
 export const initialState: cvStructureAndMethods = {
   showModal: false,

@@ -1,6 +1,6 @@
-import { cvStructure } from '../../constants/types';
+import { cvExperience } from '../../types/types';
 
-const SingleExperience = (props: cvStructure['experience'][number]) => {
+const SingleExperience = (props: cvExperience) => {
   const { position, company, city, from, to, id } = props;
   return (
     <div className="info-example" key={id}>

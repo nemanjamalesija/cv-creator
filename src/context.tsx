@@ -1,5 +1,5 @@
 import React, { useContext, useReducer, useEffect } from 'react';
-import { ACTIONS } from './constants/types';
+import { ACTIONS } from './types/types';
 import { initialState } from './constants/initialState';
 import './index.css';
 import reducer from './reducer';

@@ -1,6 +1,6 @@
 import { initialState } from './constants/initialState';
-import { cvStructure } from './constants/types';
-import { ACTIONS } from './constants/types';
+import { cvStructure } from './types/types';
+import { ACTIONS } from './types/types';
 
 const reducer = (state: cvStructure, action: ACTIONS) => {
   const { type, payload } = action;

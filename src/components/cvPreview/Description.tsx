@@ -1,6 +1,6 @@
-import React from 'react';
+type cvPreviewDescription = { description: string };
 
-const Description = ({ description }: { description: string }) => {
+const Description = ({ description }: cvPreviewDescription) => {
   return (
     <div className="description">
       <h3 className="modal-heading">Description</h3>

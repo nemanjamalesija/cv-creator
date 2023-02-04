@@ -1,7 +1,7 @@
-import { cvStructure } from '../constants/types';
+import { cvEducation } from '../types/types';
 import { useGlobalContext } from '../context';
 
-const Eduation = (props: cvStructure['education'][number]) => {
+const Eduation = (props: cvEducation) => {
   const { id, universityName, city, degree, subject, from, to } = props;
   const { storeInputsHandler, deleteUserInfoHandler } = useGlobalContext();
 

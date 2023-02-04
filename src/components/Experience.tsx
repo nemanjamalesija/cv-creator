@@ -1,7 +1,7 @@
-import { cvStructure } from '../constants/types';
+import { cvExperience } from '../types/types';
 import { useGlobalContext } from '../context';
 
-const Experience = (props: cvStructure['experience'][number]) => {
+const Experience = (props: cvExperience) => {
   const { id, position, company, city, from, to } = props;
   const { storeInputsHandler, deleteUserInfoHandler } = useGlobalContext();
 

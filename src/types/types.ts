@@ -31,6 +31,9 @@ export type cvStructure = {
   }[];
 };
 
+export type cvEducation = cvStructure['education'][number];
+export type cvExperience = cvStructure['experience'][number];
+
 export type cvStructureAndMethods = cvStructure & {
   addEducationHandler: () => void;
   addExperienceHandler: () => void;

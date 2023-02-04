@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
+import { useGlobalContext } from './context';
 import {
   Headline,
   PersonalInfo,
@@ -7,12 +8,8 @@ import {
   SubmitButtons,
   Overlay,
 } from './components';
-
 import PrintControl from './components/cvPreview/PrintControl';
-
 import CvPreview from './components/cvPreview/CvPreview';
-
-import { useGlobalContext } from './context';
 
 function App() {
   // print

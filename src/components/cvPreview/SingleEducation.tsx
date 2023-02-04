@@ -1,6 +1,6 @@
-import { cvStructure } from '../../constants/types';
+import { cvEducation } from '../../types/types';
 
-const SingleEducation = (props: cvStructure['education'][number]) => {
+const SingleEducation = (props: cvEducation) => {
   const { universityName, city, degree, subject, from, to, id } = props;
   return (
     <div className="info-example" key={id}>
