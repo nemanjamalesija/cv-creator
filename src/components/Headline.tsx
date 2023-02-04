@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Headline = () => {
   return (
     <section className="section section-headline">

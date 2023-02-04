@@ -1,4 +1,3 @@
-import React from 'react';
 import { cvStructure } from '../../constants/types';
 
 const SingleExperience = (props: cvStructure['experience'][number]) => {

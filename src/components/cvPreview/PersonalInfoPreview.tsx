@@ -1,4 +1,3 @@
-import React from 'react';
 import { useGlobalContext } from '../../context';
 const userPhotoUnknown = require('../../constants/img-undefined.jpg') as string;
 

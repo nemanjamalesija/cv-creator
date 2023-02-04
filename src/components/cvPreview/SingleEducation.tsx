@@ -1,4 +1,3 @@
-import React from 'react';
 import { cvStructure } from '../../constants/types';
 
 const SingleEducation = (props: cvStructure['education'][number]) => {

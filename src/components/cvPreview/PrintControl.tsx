@@ -1,9 +1,8 @@
-import React, { useRef } from 'react';
 import { TiArrowBackOutline } from 'react-icons/ti';
 import { BiPrinter } from 'react-icons/bi';
-import './printControl.css';
 import { useGlobalContext } from '../../context';
 import { useReactToPrint } from 'react-to-print';
+import './printControl.css';
 
 const PrintControl = (props: any) => {
   const { closeModalHandler, showModal } = useGlobalContext();
