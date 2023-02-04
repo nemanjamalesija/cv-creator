@@ -44,8 +44,9 @@ export const initialState: cvStructureAndMethods = {
     dispatchActionType: string
   ) => void {},
   deleteUserInfoHandler: (id: string, dispatchActionType: string) => void {},
-  setPhotoHandler: (e: any) => void {},
-  submitHandler: (e: any) => void {},
+  setPhotoHandler: (e: React.ChangeEvent<HTMLInputElement>) => void {},
+  submitHandler: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
+    void {},
   closeModalHandler: () => void {},
   resetStateHandler: () => void {},
 };

@@ -43,7 +43,9 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
     dispatch({ type: dispatchActionType as ACTIONS['type'], payload: id });
   };
 
-  const submitHandler = (e: any) => {
+  const submitHandler = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     dispatch({ type: 'OPEN_MODAL' });
   };

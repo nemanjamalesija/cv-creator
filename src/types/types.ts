@@ -44,7 +44,7 @@ export type cvStructureAndMethods = cvStructure & {
   ) => void;
   deleteUserInfoHandler: (id: string, dispatchActionType: string) => void;
   setPhotoHandler(e: React.ChangeEvent<HTMLInputElement>): void;
-  submitHandler(e: any): void;
+  submitHandler(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
   closeModalHandler(): void;
   resetStateHandler(): void;
 };
