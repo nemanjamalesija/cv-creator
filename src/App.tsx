@@ -11,7 +11,7 @@ import CvPreview from './components/cvPreview/CvPreview';
 
 function App() {
   // print
-  const cvPrintRef: any = useRef();
+  const cvPrintRef = useRef<HTMLElement>(null);
   const { showModal } = useGlobalContext();
 
   return (

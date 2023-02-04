@@ -67,3 +67,7 @@ export type ACTIONS = {
 
   payload?: string | payloadStoreInputs;
 };
+
+export type printControlProps = {
+  cvPrintRef: React.RefObject<HTMLElement>;
+};

@@ -4,9 +4,10 @@ import ExperiencePreview from './ExperiencePreview';
 import IntroCvPreview from './IntroCvPreview';
 import PersonalInfoPreview from './PersonalInfoPreview';
 import { useGlobalContext } from '../../context';
+import { printControlProps } from '../../types/types';
 import './cv.css';
 
-const CvPreview = (props: any) => {
+const CvPreview = (props: printControlProps) => {
   const {
     personalInfo: { description },
     showModal,
