@@ -10,9 +10,11 @@ const AppContext = React.createContext(initialState);
 const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const setPhotoHandler = (e: any) => {
-    const photo = URL.createObjectURL(e.target.files[0]);
-    dispatch({ type: 'SET_PHOTO', payload: photo });
+  const setPhotoHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const photo = URL.createObjectURL(e.target.files[0]);
+      dispatch({ type: 'SET_PHOTO', payload: photo });
+    }
   };
 
   const addEducationHandler = () => {
@@ -23,29 +25,6 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
     dispatch({ type: 'ADD_EXPERIENCE' });
   };
 
-  /* const storeEducationInputHandler = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    id: string
-  ) => {
-    const name = e.target.name;
-    const value = e.target.value;
-
-    dispatch({ type: 'STORE_EDUCATION_INFO', payload: { name, value, id } });
-  };
-
-  
-  const storeExperienceHandler = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    id: string
-  ) => {
-    const name = e.target.name;
-    const value = e.target.value;
-
-    dispatch({ type: 'STORE_EXPERIENCE_INFO', payload: { name, value, id } });
-  };
-*/
-
-  /* Refactor to a single handler function */
   const storeInputsHandler = (
     e: React.ChangeEvent<HTMLInputElement>,
     id: string,

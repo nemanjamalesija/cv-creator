@@ -43,7 +43,7 @@ export type cvStructureAndMethods = cvStructure & {
     dispatchActionType: string
   ) => void;
   deleteUserInfoHandler: (id: string, dispatchActionType: string) => void;
-  setPhotoHandler(e: any): void;
+  setPhotoHandler(e: React.ChangeEvent<HTMLInputElement>): void;
   submitHandler(e: any): void;
   closeModalHandler(): void;
   resetStateHandler(): void;
