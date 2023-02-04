@@ -49,17 +49,15 @@ export type cvStructureAndMethods = cvStructure & {
   resetStateHandler(): void;
 };
 
-type payloadStoreInputs = { name: string; value: string; id: string };
+export type printControlProps = {
+  cvPrintRef: React.RefObject<HTMLElement>;
+};
 
+// reducer actions
 export type ACTIONS = {
   type:
     | 'ADD_EXPERIENCE'
     | 'ADD_EDUCATION'
-    | 'STORE_PERSONAL_INFO'
-    | 'STORE_EDUCATION_INFO'
-    | 'STORE_EXPERIENCE_INFO'
-    | 'DELETE_EDUCATION_INFO'
-    | 'DELETE_EXPERIENCE_INFO'
     | 'SET_PHOTO'
     | 'OPEN_MODAL'
     | 'CLOSE_MODAL'
@@ -68,6 +66,15 @@ export type ACTIONS = {
   payload?: string | payloadStoreInputs;
 };
 
-export type printControlProps = {
-  cvPrintRef: React.RefObject<HTMLElement>;
+type payloadStoreInputs = { name: string; value: string; id: string };
+
+export type ACTIONSWITHPAYLOAD = {
+  type:
+    | 'STORE_PERSONAL_INFO'
+    | 'STORE_EDUCATION_INFO'
+    | 'STORE_EXPERIENCE_INFO'
+    | 'DELETE_EDUCATION_INFO'
+    | 'DELETE_EXPERIENCE_INFO';
+
+  payload: string | payloadStoreInputs;
 };

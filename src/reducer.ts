@@ -1,8 +1,8 @@
 import { initialState } from './constants/initialState';
-import { cvStructure } from './types/types';
+import { ACTIONSWITHPAYLOAD, cvStructure } from './types/types';
 import { ACTIONS } from './types/types';
 
-const reducer = (state: cvStructure, action: ACTIONS) => {
+const reducer = (state: cvStructure, action: ACTIONS | ACTIONSWITHPAYLOAD) => {
   const { type, payload } = action;
   switch (type) {
     case 'ADD_EDUCATION':
@@ -42,7 +42,6 @@ const reducer = (state: cvStructure, action: ACTIONS) => {
 
     case 'SET_PHOTO':
       if (typeof payload === 'string') {
-        console.log(payload);
         return {
           ...state,
           personalInfo: { ...state.personalInfo, photo: payload },
