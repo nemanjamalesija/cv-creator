@@ -1,5 +1,5 @@
-import { cvEducation } from '../types/types';
-import { useGlobalContext } from '../context';
+import { cvEducation } from '../../types/types';
+import { useGlobalContext } from '../../context';
 
 const Eduation = (props: cvEducation) => {
   const { id, universityName, city, degree, subject, from, to } = props;

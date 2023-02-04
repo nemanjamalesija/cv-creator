@@ -1,13 +1,11 @@
 import { useRef } from 'react';
 import { useGlobalContext } from './context';
+import { Headline, SubmitButtons, Overlay } from './components';
 import {
-  Headline,
   PersonalInfo,
   FormEducation,
   FormExperience,
-  SubmitButtons,
-  Overlay,
-} from './components';
+} from './components/cvForm';
 import PrintControl from './components/cvPreview/PrintControl';
 import CvPreview from './components/cvPreview/CvPreview';
 

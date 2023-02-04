@@ -1,5 +1,5 @@
-import { useGlobalContext } from '../context';
-import Education from './Eduation';
+import { useGlobalContext } from '../../context';
+import Education from './Education';
 
 const FormEducation = () => {
   const { education, addEducationHandler } = useGlobalContext();

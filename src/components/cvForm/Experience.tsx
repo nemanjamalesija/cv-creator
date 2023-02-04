@@ -1,5 +1,5 @@
-import { cvExperience } from '../types/types';
-import { useGlobalContext } from '../context';
+import { cvExperience } from '../../types/types';
+import { useGlobalContext } from '../../context';
 
 const Experience = (props: cvExperience) => {
   const { id, position, company, city, from, to } = props;
