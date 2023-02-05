@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useGlobalContext } from './context';
-import { Headline, SubmitButtons, Overlay } from './components';
+import { Headline, SubmitButtons, Overlay, Footer } from './components';
 import {
   PersonalInfo,
   FormEducation,
@@ -28,6 +28,7 @@ function App() {
       <PrintControl cvPrintRef={cvPrintRef} />
       <CvPreview cvPrintRef={cvPrintRef} />
       <Overlay />
+      <Footer />
     </div>
   );
 }
