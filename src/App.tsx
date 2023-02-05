@@ -28,7 +28,7 @@ function App() {
       <PrintControl cvPrintRef={cvPrintRef} />
       <CvPreview cvPrintRef={cvPrintRef} />
       <Overlay />
-      <Footer />
+      {!showModal && <Footer />}
     </div>
   );
 }
