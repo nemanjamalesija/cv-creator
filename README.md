@@ -8,3 +8,5 @@ Functionality:
 - Preview, print or reset the text from the cv.
 
 Application to practice the foundations of React that gave me full confidence with storing complex input data in my state.
+
+Built with React, React-to-print, UUID and Typescript.
